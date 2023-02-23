@@ -5,18 +5,18 @@ import styled from 'styled-components'
 const Container = styled.div`
 height: 60px;
 background-color: black;
-`
+`;
 
-const wrapper = styled.div`
+const Wrapper = styled.div`
 padding: 10px 20px;
 display: flex;
-allign-items: center;
+align-items: center;
 justify-content : space-between;
 `;
 const Left = styled.div`
  flex: 1;
  display: flex;
- allign-items: center;
+ align-items: center;
  `;
 
 const language = styled.span`
@@ -28,9 +28,9 @@ const language = styled.span`
 const SearchContainer = styled.div`
 border: 0.5px solid lightgray;
 display: flex;
-allign-items: center;
+align-items: center;
 margin-left: 25px;
-padding = 5px;
+padding : 5px;
 `
 
 const Input = styled.input`
@@ -39,7 +39,7 @@ border: none;
 
 const Center = styled.div`
  flex: 1;
- text-allign: center;
+ text-align: center;
 `;
 
 const Logo = styled.h1`
@@ -48,7 +48,7 @@ const Logo = styled.h1`
 const Right = styled.div`
  flex: 1;
  display: flex;
- allign-items: center;
+ align-items: center;
  justify-content: flex-end;
 `;
 
@@ -85,9 +85,9 @@ const Navbar = () => {
         <ListItem>REGISTER</ListItem>
         <ListItem>Sign In</ListItem>
         <ListItem>
-        <Badge badgeContent={4} color="primary">
+        
   <ShoppingCartOutlined />
-</Badge>
+
         </ListItem>
        </Right>
         </wrapper> 
