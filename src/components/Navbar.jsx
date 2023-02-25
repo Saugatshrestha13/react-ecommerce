@@ -1,98 +1,92 @@
-import { Search, ShoppingCartOutlined } from '@material-ui/icons';
-import React from 'react'
-import styled from 'styled-components'
+import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
-height: 60px;
-background-color: black;
+  height: 65px;
+  background-color: papayawhip;
+  color: black;
 `;
 
 const Wrapper = styled.div`
-padding: 10px 20px;
-display: flex;
-align-items: center;
-justify-content : space-between;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: papayawhip;
 `;
 const Left = styled.div`
- flex: 1;
- display: flex;
- align-items: center;
- `;
+  flex: 1;
+  display: flex;
+  align-items: center;
+`;
 
-const language = styled.span`
-  font-size: 14px;
+const Language = styled.span`
+  font-size: 12px;
   cursor: pointer;
-
 `;
 
 const SearchContainer = styled.div`
-border: 0.5px solid lightgray;
-display: flex;
-align-items: center;
-margin-left: 25px;
-padding : 5px;
-`
+  border: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+  background-size: cover;
+`;
 
 const Input = styled.input`
-border: none;
-`
+  border: none;
+`;
 
 const Center = styled.div`
- flex: 1;
- text-align: center;
+  flex: 1;
+  text-align: center;
 `;
 
-const Logo = styled.h1`
+const Logo = styled.h2`
   font-weight: bold;
-`
-const Right = styled.div`
- flex: 1;
- display: flex;
- align-items: center;
- justify-content: flex-end;
 `;
-
+const Right = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
 
 const ListItem = styled.div`
-font-size: 14px;
-cursor: pointer;
-margin-left: 25px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 25px;
+  font-weight: bold;
+  background-size: cover;
 `;
 
 const Navbar = () => {
   return (
     <Container>
-     <wrapper>
-       <Left>
-        <language>English</language>
-       <SearchContainer>
-       <Input/>
-<Search/>
-<Search style={{color:"gray", fontSize:16}}/>
-
-
-
-
-
-       </SearchContainer>
-         
-
-         
-       </Left>
-       <Center><Logo>Shuvam Liquors.</Logo></Center>
-       <Right>
-
-        <ListItem>REGISTER</ListItem>
-        <ListItem>Sign In</ListItem>
-        <ListItem>
-        
-  <ShoppingCartOutlined />
-
-        </ListItem>
-       </Right>
-        </wrapper> 
+      <Wrapper>
+        <Left>
+          <Language>English</Language>
+          <SearchContainer>
+            <Input />
+            <Search />
+            <Search style={{ color: "gray", fontSize: 10 }} />
+          </SearchContainer>
+        </Left>
+        <Center>
+          <Logo>Shuvam Liquors.</Logo>
+        </Center>
+        <Right>
+          <ListItem>REGISTER</ListItem>
+          <ListItem>Sign In</ListItem>
+          <ListItem>
+            <ShoppingCartOutlined />
+          </ListItem>
+        </Right>
+      </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
