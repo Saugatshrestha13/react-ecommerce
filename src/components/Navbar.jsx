@@ -27,11 +27,11 @@ const Language = styled.span`
 `;
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
+  border: 0.5px solid gray;
   display: flex;
   align-items: center;
-  margin-left: 25px;
-  padding: 5px;
+  margin-left: 35px;
+  padding: 4px;
   background-size: cover;
 `;
 
@@ -44,7 +44,7 @@ const Center = styled.div`
   text-align: center;
 `;
 
-const Logo = styled.h2`
+const Logo = styled.h3`
   font-weight: bold;
 `;
 const Right = styled.div`
@@ -55,7 +55,7 @@ const Right = styled.div`
 `;
 
 const ListItem = styled.div`
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
   margin-left: 25px;
   font-weight: bold;

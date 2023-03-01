@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   flex: 1;
   margin: 3px;
-  height: 70vh;
+  height: 50vh;
   position: relative;
 `;
 
@@ -25,15 +25,15 @@ const Info = styled.div`
   flex-direction: column;
 `;
 const Title = styled.h1`
-  color: white;
+  color: black;
   margin-bottom: 20px;
-  background: black;
+  background: white;
 `;
 const Button = styled.button`
   border: none;
   padding: 10px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   cursor: pointer;
   font-weight: 600;
 `;
