@@ -7,17 +7,16 @@ import Newsletter from '../components/Newsletter'
 import Products from '../components/Products'
 import Slider from '../components/Slider'
 
-
 const Home = () => {
   return (
     <>
-      <Announcement/>
-      <Navbar/>
-      <Slider/>
+      <Announcement />
+      <Navbar />
+      <Slider />
       <Categories />
-      <Products/>
-      <Newsletter/>
-      <Footer/>
+      <Products />
+      <Newsletter />
+      <Footer />
     </>
   )
 }
