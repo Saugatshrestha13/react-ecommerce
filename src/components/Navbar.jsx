@@ -6,6 +6,9 @@ const Container = styled.div`
   height: 65px;
   background-color: papayawhip;
   color: black;
+  
+
+
 `;
 
 const Wrapper = styled.div`

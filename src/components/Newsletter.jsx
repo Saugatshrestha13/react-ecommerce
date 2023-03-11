@@ -52,6 +52,6 @@ const Newsletter = () => {
       </InputContainer>
     </Container>
   )
-}
+};
 
 export default Newsletter

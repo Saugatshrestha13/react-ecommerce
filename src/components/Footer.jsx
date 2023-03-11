@@ -69,6 +69,7 @@ width: 50%;
 `;
 
 const Footer = () => {
+  return (
      <Container>
       <Left>
         <Logo>Shuvam.</Logo>
@@ -108,17 +109,18 @@ const Footer = () => {
 
         <Title>Contact</Title>
         <ContactItem>
-            <LocationOn/>  Nayabazaar Dharagalli Kathmandu
+            <LocationOn style={{marginRight:"10px"}}/>  Nayabazaar Dharagalli Kathmandu
         </ContactItem>
         <ContactItem>
-          <LocalPhone/> 9860419989
-        </ContactItem><ContactItem>
-          <Email/>  saugats029@gmail.com
+          <LocalPhone style={{marginRight:"10px"}}/> 9860419989
+        </ContactItem>
+        <ContactItem>
+          <Email style={{marginRight:"10px"}}/>  saugats029@gmail.com
         </ContactItem>
         <Payment src="https://www.nicepng.com/png/detail/395-3955693_paypal-payment-method-logo.png"/>
       </Right>
     </Container>
-
+);
 };
 
 export default Footer
