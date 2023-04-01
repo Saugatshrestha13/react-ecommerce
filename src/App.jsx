@@ -1,7 +1,7 @@
-import Login from './pages/Login'
+import Pay from './pages/Pay'
 
 const App = () => {
-  return <Login />
+  return <Pay />
 }
 
 export default App
