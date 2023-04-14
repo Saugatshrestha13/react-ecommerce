@@ -1,11 +1,13 @@
 import styled from 'styled-components'
+import {toast} from "react-toastify";
+import {useState} from "react";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url('https://images.pexels.com/photos/340996/pexels-photo-340996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
-      center;
+  url('https://images.pexels.com/photos/340996/pexels-photo-340996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -45,7 +47,7 @@ const Button = styled.button`
   margin-bottom: 10px;
 `
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
   margin: 5px 0px;
   font-size: 12px;
   text-decoration: underline;
@@ -53,20 +55,30 @@ const Link = styled.a`
 `
 
 const Login = () => {
-  return (
-    <Container>
-      <Wrapper>
-        <Title>Sign In</Title>
-        <Form>
-          <Input placeholder='username' />
-          <Input placeholder='password' />
-          <Button>LogIn</Button>
-          <Link>Forgot Password?</Link>
-          <Link>Create A New Password</Link>
-        </Form>
-      </Wrapper>
-    </Container>
-  )
+    const [loginData, setLoginData] = useState({email: '', password: ''})
+    const loginCLicked = (e) => {
+        e.preventDefault()
+        console.log(loginData)
+        toast.success("Logged in successfully!");
+    }
+
+    return (
+        <Container>
+            <Wrapper>
+                <Title>Sign In</Title>
+                <Form onSubmit={loginCLicked}>
+                    <Input placeholder='Email' value={loginData.email} type='email' onChange={(event) => {
+                        setLoginData({...loginData, email: event.target.value})
+                    }}/>
+                    <Input placeholder='Password' value={loginData.password} type='password'
+                           onChange={(event) => setLoginData({...loginData, password: event.target.value})}/>
+                    <Button onClick={loginCLicked}>Log In</Button>
+                    <StyledLink>Forgot Password?</StyledLink>
+                    <StyledLink to={"/register"}>Create A New Account</StyledLink>
+                </Form>
+            </Wrapper>
+        </Container>
+    )
 }
 
 export default Login
