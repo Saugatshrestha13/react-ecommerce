@@ -2,14 +2,24 @@ import React, {useState} from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import styled from "styled-components";
-import {FormControl, InputLabel, MenuItem, Select} from "@material-ui/core";
+import {
+    Checkbox,
+    Divider,
+    FormControl,
+    FormControlLabel,
+    FormGroup,
+    FormLabel,
+    InputLabel,
+    MenuItem,
+    Select
+} from "@material-ui/core";
 
 const EstimationContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 500px;
+  height: 525px;
   background-color: papayawhip;
 `
 
@@ -20,6 +30,12 @@ const Wrapper = styled.div`
   background-color: white;
 `
 
+const DrinkDdWrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+`
 
 const Title = styled.h1`
   font-size: 24px;
@@ -33,7 +49,6 @@ const Form = styled.form`
 
 const Input = styled.input`
   flex: 1;
-  min-width: 40%;
   margin: 20px 10px 0px 0px;
   padding: 10px;
 `
@@ -56,41 +71,142 @@ const Estimation = () => {
                 <Wrapper>
                     <Title>Get an customized accurate estimation for your event</Title>
                     <Form>
-                        <FormControl sx={{ m: 1, width: 120 }} size="small">
-                            <InputLabel id="demo-select-small-label">Event Type</InputLabel>
-                            <Select
-                                labelId="demo-select-small-label"
-                                id="demo-select-small"
-                                label="Age"
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl>
-                        <Input placeholder='Last Name' value={estimationData?.lastName} type='text'
-                               onChange={(event) => {
-                                   setEstimationData({...estimationData, lastName: event.target.value})
-                               }}/>
-                        <Input placeholder='Email' value={estimationData?.email} type='email' onChange={(event) => {
-                            setEstimationData({...estimationData, email: event.target.value})
-                        }}/>
-                        <Input placeholder='Username' value={estimationData?.username} type='text'
-                               onChange={(event) => {
-                                   setEstimationData({...estimationData, username: event.target.value})
-                               }}/>
-                        <Input placeholder='Password' value={estimationData?.password} type='password'
-                               onChange={(event) => {
-                                   setEstimationData({...estimationData, password: event.target.value})
-                               }}/>
-                        <Input placeholder='Confirm Password' value={estimationData?.confirmPassword} type='password'
-                               onChange={(event) => {
-                                   setEstimationData({...estimationData, confirmPassword: event.target.value})
-                               }}/>
-                        <Button>Get Estimation</Button>
+                        <div style={{marginTop: '15px', width: '100%'}}>
+                            <FormControl fullWidth variant={"outlined"}>
+                                <InputLabel id="demo-select-small-label">Event Type</InputLabel>
+                                <Select
+                                    labelId="demo-select-small-label"
+                                    id="demo-select-small"
+                                    label="Type"
+                                >
+                                    <MenuItem value={'marriage'}>Marriage</MenuItem>
+                                    <MenuItem value={'rice-feeding'}>Rice Feeding</MenuItem>
+                                    <MenuItem value={'bratabandha'}>Bratabandha</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+
+                        <div style={{marginTop: '10px', width: '100%'}}>
+                            <FormLabel component="legend">Select Liquor Types</FormLabel>
+                            <FormGroup style={{display: 'flex', flexFlow: 'row nowrap'}}>
+                                <FormControlLabel control={<Checkbox/>} label="Whiskey"/>
+                                <FormControlLabel control={<Checkbox/>} label="Wine"/>
+                                <FormControlLabel control={<Checkbox/>} label="Beer"/>
+                                <FormControlLabel control={<Checkbox/>} label="Soft Drinks"/>
+                            </FormGroup>
+                        </div>
+
+                        <DrinkDdWrapper>
+                            <div style={{marginTop: '15px', width: '24%'}}>
+                                <FormControl fullWidth variant={"outlined"}>
+                                    <InputLabel id="demo-select-small-label">Whiskey</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small-label"
+                                        id="demo-select-small"
+                                        label="Whiskey"
+                                    >
+                                        <MenuItem value={'jd'}>Jack Daniels</MenuItem>
+                                        <MenuItem value={'red'}>Red Label</MenuItem>
+                                        <MenuItem value={'black'}>Black Label</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+
+                            <div style={{marginTop: '15px', width: '24%'}}>
+                                <FormControl fullWidth variant={"outlined"}>
+                                    <InputLabel id="demo-select-small-label">Beer</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small-label"
+                                        id="demo-select-small"
+                                        label="Whiskey"
+                                    >
+                                        <MenuItem value={'jd'}>Jack Daniels</MenuItem>
+                                        <MenuItem value={'red'}>Red Label</MenuItem>
+                                        <MenuItem value={'black'}>Black Label</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+
+                            <div style={{marginTop: '15px', width: '24%'}}>
+                                <FormControl fullWidth variant={"outlined"}>
+                                    <InputLabel id="demo-select-small-label">Wine</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small-label"
+                                        id="demo-select-small"
+                                        label="Whiskey"
+                                    >
+                                        <MenuItem value={'jd'}>Jack Daniels</MenuItem>
+                                        <MenuItem value={'red'}>Red Label</MenuItem>
+                                        <MenuItem value={'black'}>Black Label</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+
+                            <div style={{marginTop: '15px', width: '24%'}}>
+                                <FormControl fullWidth variant={"outlined"}>
+                                    <InputLabel id="demo-select-small-label">Soft Drinks</InputLabel>
+                                    <Select
+                                        labelId="demo-select-small-label"
+                                        id="demo-select-small"
+                                        label="Whiskey"
+                                    >
+                                        <MenuItem value={'jd'}>Jack Daniels</MenuItem>
+                                        <MenuItem value={'red'}>Red Label</MenuItem>
+                                        <MenuItem value={'black'}>Black Label</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </div>
+                        </DrinkDdWrapper>
+
+                        <DrinkDdWrapper>
+                            <Input placeholder='Whiskey Quantity / Per Bottle' value={estimationData?.confirmPassword}
+                                   type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                            <Input placeholder='Beer Quantity / Per Bottle' value={estimationData?.confirmPassword}
+                                   type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                            <Input placeholder='Wine Quantity / Per Box' value={estimationData?.confirmPassword}
+                                   type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                            <Input placeholder='Soft Drinks Quantity / Per Bottle'
+                                   value={estimationData?.confirmPassword} type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                        </DrinkDdWrapper>
+
+                        <Divider style={{width: "100%", marginTop: '10px'}}/>
+
+                        <DrinkDdWrapper>
+                            <Input placeholder='Total Head Count' value={estimationData?.confirmPassword}
+                                   type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                            <Input placeholder='Ladies' value={estimationData?.confirmPassword}
+                                   type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                            <Input placeholder='Gents' value={estimationData?.confirmPassword}
+                                   type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                            <Input placeholder='Kids'
+                                   value={estimationData?.confirmPassword} type='number'
+                                   onChange={(event) => {
+                                       setEstimationData({...estimationData, confirmPassword: event.target.value})
+                                   }}/>
+                        </DrinkDdWrapper>
+
+                        <Button style={{margin: '15px auto'}}>Get Estimation</Button>
                     </Form>
                 </Wrapper>
             </EstimationContainer>
