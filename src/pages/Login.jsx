@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {toast} from "react-toastify";
 import {useState} from "react";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -56,10 +56,13 @@ const StyledLink = styled(Link)`
 
 const Login = () => {
     const [loginData, setLoginData] = useState({email: '', password: ''})
+    const navigate = useNavigate();
+
     const loginCLicked = (e) => {
         e.preventDefault()
         console.log(loginData)
         toast.success("Logged in successfully!");
+        navigate('/home')
     }
 
     return (

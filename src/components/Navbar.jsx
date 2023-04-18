@@ -1,6 +1,7 @@
-import { Search, ShoppingCartOutlined } from '@material-ui/icons'
+import {Search, ShoppingCartOutlined} from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
+import {useNavigate} from "react-router-dom";
 
 const Container = styled.div`
   height: 65px;
@@ -9,8 +10,10 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding: 10px 20px;
+  height: 100%;
+  padding: 0 20px;
   display: flex;
+  flex-font: row nowrap;
   align-items: center;
   justify-content: space-between;
   background: papayawhip;
@@ -21,22 +24,21 @@ const Left = styled.div`
   align-items: center;
 `
 
-const Language = styled.span`
-  font-size: 12px;
-  cursor: pointer;
-`
-
 const SearchContainer = styled.div`
   border: 0.5px solid gray;
   display: flex;
   align-items: center;
-  margin-left: 35px;
   padding: 4px;
   background-size: cover;
+  background: white;
 `
 
 const Input = styled.input`
   border: none;
+
+  &:focus-visible {
+    outline: none;
+  }
 `
 
 const Center = styled.div`
@@ -63,30 +65,36 @@ const ListItem = styled.div`
 `
 
 const Navbar = () => {
-  return (
-    <Container>
-      <Wrapper>
-        <Left>
-          <Language>English</Language>
-          <SearchContainer>
-            <Input />
-            <Search />
-            <Search style={{ color: 'gray', fontSize: 10 }} />
-          </SearchContainer>
-        </Left>
-        <Center>
-          <Logo>Shuvam Liquors.</Logo>
-        </Center>
-        <Right>
-          <ListItem>REGISTER</ListItem>
-          <ListItem>Sign In</ListItem>
-          <ListItem>
-            <ShoppingCartOutlined />
-          </ListItem>
-        </Right>
-      </Wrapper>
-    </Container>
-  )
+    const navigate = useNavigate();
+
+    return (
+        <Container>
+            <Wrapper>
+                <Left>
+                    <SearchContainer>
+                        <Input/>
+                        <Search/>
+                    </SearchContainer>
+                </Left>
+                <Center>
+                    <Logo>Shuvam Liquors.</Logo>
+                </Center>
+                <Right>
+                    <ListItem onClick={() => {
+                        navigate('/register')
+                    }}>Register</ListItem>
+                    <ListItem onClick={() => {
+                        navigate('/login')
+                    }}>Sign In</ListItem>
+                    <ListItem onClick={() => {
+                        navigate('/cart')
+                    }}>
+                        <ShoppingCartOutlined/>
+                    </ListItem>
+                </Right>
+            </Wrapper>
+        </Container>
+    )
 }
 
 export default Navbar
