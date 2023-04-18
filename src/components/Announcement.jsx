@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {useNavigate} from "react-router-dom";
 
 const Container = styled.div`
   height: 50px;
@@ -12,7 +13,8 @@ const Container = styled.div`
 `
 
 const Announcement = () => {
-  return <Container>This website also provides estimation party plan facility.</Container>
+  const navigate = useNavigate()
+  return <Container onClick={() => navigate('/estimation')}>This website also provides estimation party plan facility.</Container>
 }
 
 export default Announcement

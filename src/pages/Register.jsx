@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {useState} from "react";
 import {toast} from "react-toastify";
+import {useNavigate} from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -48,6 +49,7 @@ const Button = styled.button`
 `
 
 const Register = () => {
+    const navigate = useNavigate()
     const [registerData, setRegisterData] = useState({
         firstName: '',
         lastName: '',
@@ -60,6 +62,7 @@ const Register = () => {
     const registerClicked = (e) => {
         e.preventDefault()
         console.log(registerData)
+        navigate('/login')
         toast.success("Registered successfully!");
     }
 

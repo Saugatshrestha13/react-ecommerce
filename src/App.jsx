@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Pay from "./pages/Pay";
 import Cart from "./pages/Cart";
+import Estimation from "./pages/Estimation";
 
 const App = () => {
     return (
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/products" element={<ProductList/>}/>
             <Route path="/payment" element={<Pay/>}/>
             <Route path="/cart" element={<Cart/>}/>
+            <Route path="/estimation" element={<Estimation/>}/>
         </Routes>
     )
 }

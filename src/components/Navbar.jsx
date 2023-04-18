@@ -2,7 +2,7 @@ import {Search, ShoppingCartOutlined} from '@material-ui/icons'
 import React from 'react'
 import styled from 'styled-components'
 import {useNavigate} from "react-router-dom";
-
+import logo from "../assets/logo.png"
 const Container = styled.div`
   height: 65px;
   background-color: papayawhip;
@@ -46,9 +46,8 @@ const Center = styled.div`
   text-align: center;
 `
 
-const Logo = styled.h3`
-  font-weight: bold;
-`
+const Logo = styled.div`
+=`
 const Right = styled.div`
   flex: 1;
   display: flex;
@@ -77,7 +76,9 @@ const Navbar = () => {
                     </SearchContainer>
                 </Left>
                 <Center>
-                    <Logo>Shuvam Liquors.</Logo>
+                    <Logo onClick={() => navigate('/home')}>
+                        <img src={logo} height={"50px"}/>
+                    </Logo>
                 </Center>
                 <Right>
                     <ListItem onClick={() => {

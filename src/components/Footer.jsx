@@ -1,12 +1,4 @@
-import {
-  Email,
-  Facebook,
-  Instagram,
-  LocalPhone,
-  LocationOn,
-  Pinterest,
-  Twitter,
-} from '@material-ui/icons'
+import {Email, Facebook, Instagram, LocalPhone, LocationOn, Pinterest, Twitter,} from '@material-ui/icons'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -76,56 +68,56 @@ const Payment = styled.img`
 `
 
 const Footer = () => {
-  return (
-    <Container>
-      <Left>
-        <Logo>Shuvam.</Logo>
-        <Desc>Get your liquor products and exciting facilities.</Desc>
-        <SocialContainer>
-          <SocialIcon color='385999'>
-            <Facebook />
-          </SocialIcon>
-          <SocialIcon color='E440SF'>
-            <Instagram />
-          </SocialIcon>
-          <SocialIcon color='55ACEE'>
-            <Twitter />
-          </SocialIcon>
-          <SocialIcon color='E60023'>
-            <Pinterest />
-          </SocialIcon>
-        </SocialContainer>
-      </Left>
-      <Center>
-        <Title>Useful Links</Title>
-        <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Whiskey</ListItem>
-          <ListItem>Beer</ListItem>
-          <ListItem>Wine</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Snacks</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>WishList</ListItem>
-          <ListItem>Terms</ListItem>
-        </List>
-      </Center>
-      <Right>
-        <Title>Contact</Title>
-        <ContactItem>
-          <LocationOn style={{ marginRight: '10px' }} /> Nayabazaar Dharagalli Kathmandu
-        </ContactItem>
-        <ContactItem>
-          <LocalPhone style={{ marginRight: '10px' }} /> 9860419989
-        </ContactItem>
-        <ContactItem>
-          <Email style={{ marginRight: '10px' }} /> saugats029@gmail.com
-        </ContactItem>
-        <Payment src='https://www.nicepng.com/png/detail/395-3955693_paypal-payment-method-logo.png' />
-      </Right>
-    </Container>
-  )
+    return (
+        <Container>
+            <Left>
+                <Logo>Shuvam Liquors.</Logo>
+                <Desc>Get your liquor products and exciting facilities.</Desc>
+                <SocialContainer>
+                    <SocialIcon color='385999'>
+                        <Facebook/>
+                    </SocialIcon>
+                    <SocialIcon color='E440SF'>
+                        <Instagram/>
+                    </SocialIcon>
+                    <SocialIcon color='55ACEE'>
+                        <Twitter/>
+                    </SocialIcon>
+                    <SocialIcon color='E60023'>
+                        <Pinterest/>
+                    </SocialIcon>
+                </SocialContainer>
+            </Left>
+            <Center>
+                <Title>Useful Links</Title>
+                <List>
+                    <ListItem>Home</ListItem>
+                    <ListItem>Cart</ListItem>
+                    <ListItem>Whiskey</ListItem>
+                    <ListItem>Beer</ListItem>
+                    <ListItem>Wine</ListItem>
+                    <ListItem>My Account</ListItem>
+                    <ListItem>Snacks</ListItem>
+                    <ListItem>Order Tracking</ListItem>
+                    <ListItem>WishList</ListItem>
+                    <ListItem>Terms</ListItem>
+                </List>
+            </Center>
+            <Right>
+                <Title>Contact</Title>
+                <ContactItem>
+                    <LocationOn style={{marginRight: '10px'}}/> Nayabazaar Dharagalli Kathmandu
+                </ContactItem>
+                <ContactItem>
+                    <LocalPhone style={{marginRight: '10px'}}/> 9860419989
+                </ContactItem>
+                <ContactItem>
+                    <Email style={{marginRight: '10px'}}/> saugats029@gmail.com
+                </ContactItem>
+                <Payment src='https://www.nicepng.com/png/detail/395-3955693_paypal-payment-method-logo.png'/>
+            </Right>
+        </Container>
+    )
 }
 
 export default Footer
